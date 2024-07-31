@@ -12,8 +12,8 @@ const ToDoList = ({ items, setItems }) => {
     <div>
       {items.map((toDoItem, index) => (
         <>
-          <div className="list">
-            <ToDoItem item={toDoItem} setItems={setItems} key={toDoItem.value} />
+          <div className="list" key={toDoItem.value} >
+            <ToDoItem item={toDoItem} setItems={setItems} />
             <button onClick={() => handleClick(index)} className="delete-btn">
               <FontAwesomeIcon
                 icon={faTrashCan}
