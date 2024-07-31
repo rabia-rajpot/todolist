@@ -8,7 +8,7 @@ const ToDoInput = ({ setItems }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newToDo = {value: value, itemStatus: "active"}
+    const newToDo = {value: value, status: "active"}
     if (newToDo.value) {
       setItems((prevItems) => [...prevItems, newToDo]);
       setValue("");
