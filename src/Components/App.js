@@ -7,6 +7,11 @@ import Filter from "./Filter";
 const App = () => {
   const [items, setItems] = useState([]);
 
+  const activatedItems = items?.filter(item => item.status === "active")
+  const doneItems = items?.filter(item => item.status === "done")
+
+  console.log(items);
+
   return (
     <div className="main">
       <ToDoInput setItems={setItems} />
