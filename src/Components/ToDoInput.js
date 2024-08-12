@@ -8,7 +8,7 @@ const ToDoInput = ({ setItems }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newToDo = {value: value, status: "active"}
+    const newToDo = { id: Date.now(),value: value, completed: false };
     if (newToDo.value) {
       setItems((prevItems) => [...prevItems, newToDo]);
       setValue("");
@@ -21,6 +21,7 @@ const ToDoInput = ({ setItems }) => {
         <input
           onChange={handleChange}
           type="text"
+          key={value.id}
           value={value}
           placeholder="Add Item"
           className="input"
