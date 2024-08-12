@@ -16,13 +16,11 @@ const App = () => {
       const data = await res.json();
       const updatedData = data.map((item) => ({ ...item, completed: false }));
       setItems(updatedData);
-      console.log(data);
     };
     fetchPost();
   }, []);
   const activatedItems = items.filter((item) => !item.completed);
   const doneItems = items.filter((item) => item.completed);
-  console.log(",,", doneItems);
 
   const handleCheckbox = () => {
     switch (filterItems) {
