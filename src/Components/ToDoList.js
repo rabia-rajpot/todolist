@@ -11,18 +11,16 @@ const ToDoList = ({ items, setItems }) => {
   return (
     <div>
       {items.map((toDoItem, index) => (
-        <>
-          <div className="list" key={toDoItem.value} >
-            <ToDoItem item={toDoItem} setItems={setItems} />
-            <button onClick={() => handleClick(index)} className="delete-btn">
-              <FontAwesomeIcon
-                icon={faTrashCan}
-                style={{ color: "rgb(128, 63, 166)" }}
-                size="2x"
-              />
-            </button>
-          </div>
-        </>
+        <div className="list" key={toDoItem.id}>
+          <ToDoItem item={toDoItem} setItems={setItems} />
+          <button onClick={() => handleClick(index)} className="delete-btn">
+            <FontAwesomeIcon
+              icon={faTrashCan}
+              style={{ color: "rgb(128, 63, 166)" }}
+              size="2x"
+            />
+          </button>
+        </div>
       ))}
     </div>
   );
