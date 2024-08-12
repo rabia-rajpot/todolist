@@ -8,10 +8,22 @@ const App = () => {
   const [items, setItems] = useState([]);
   const [filterItems, setFilterItems] = useState("all");
 
-  const activatedItems = items.filter(item => item.status === "active");
-  const doneItems = items.filter(item => item.status === "done");
-  
-  
+  useEffect(() => {
+    const fetchPost = async () => {
+      const res = await fetch(
+        "https://jsonplaceholder.typicode.com/todos?_limit=5"
+      );
+      const data = await res.json();
+      const updatedData = data.map((item) => ({ ...item, completed: false }));
+      setItems(updatedData);
+      console.log(data);
+    };
+    fetchPost();
+  }, []);
+  const activatedItems = items.filter((item) => !item.completed);
+  const doneItems = items.filter((item) => item.completed);
+  console.log(",,", doneItems);
+
   const handleCheckbox = () => {
     switch (filterItems) {
       case "active":
@@ -22,9 +34,6 @@ const App = () => {
         return items;
     }
   };
-  
-
- console.log(filterItems);
 
   return (
     <div className="main">
