@@ -1,5 +1,4 @@
 const Filter = ({ setFilterItems, filterItems }) => {
-    console.log(filterItems);
   return (
     <div className="active">
       <button
