@@ -12,7 +12,7 @@ const ToDoItem = ({ item, setItems }) => {
           : prevItem
       );
     });
-    console.log(item.completed);
+   
   };
   return (
     <div className="item">
